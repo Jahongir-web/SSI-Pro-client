@@ -1,20 +1,20 @@
-const myModal = new bootstrap.Modal(document.getElementById("loadStateModal"));
+// const myModal = new bootstrap.Modal(document.getElementById("loadStateModal"));
 const loader = document.querySelector("#loadingIndicator");
 
 let partnersList = document.querySelector('.patners-list');
 let brandsList = document.querySelector('.brands-list');
 let productsList = document.querySelector('.products-list');
 
-myModal.show();
+// myModal.show();
 
-document.onreadystatechange = () => {
-  if (document.readyState === "complete") {
-    myModal.hide();
-    setTimeout(() => {
-      myModal.hide();
-    }, "500");
-  }
-};
+// document.onreadystatechange = () => {
+//   if (document.readyState === "complete") {
+//     myModal.hide();
+//     setTimeout(() => {
+//       myModal.hide();
+//     }, "500");
+//   }
+// };
 
 
 function sendMail() {

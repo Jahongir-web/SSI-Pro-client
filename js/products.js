@@ -3,6 +3,7 @@ let productList = document.querySelector('.product-list')
 let subCatName = document.querySelector('#subcat0002')
 let categoryNameTop = document.querySelector('.category-title-top')
 let categoryName = document.querySelector('.category-name')
+let searchInput = document.querySelector('.search-input')
 
 let getCategories = async()=> {
   try {
@@ -11,7 +12,16 @@ let getCategories = async()=> {
     
     let categories = await res.json() 
     
-    let content = '';
+    let content = `
+        <li class="mb-1" onclick="getProductAll()">
+        <button
+          class="btn w-75 btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"          
+          onclick="changeHeading('Все оборудование')"            
+        >
+          Все          
+        </button>
+      </li>
+    `;
 
     categories.forEach(category => {
       let sbContent = '';
@@ -138,7 +148,21 @@ let getProductByCategory = (id, content) => {
   subCatName.textContent = content
 }
 
+let getProductAll = () => {
+  display(products.reverse())
+  subCatName.textContent = 'Приветствуем вас в каталоге нашей компании'
+}
+
 let changeHeading = (content) => {
   categoryNameTop.textContent = content
   categoryName.textContent = content
 }
+
+
+searchInput.addEventListener('keyup', ()=> {
+  const key = new RegExp(searchInput.value, "i");
+
+  let filteredProducts = products.filter(prod => prod.title.match(key))
+
+  display(filteredProducts.reverse())
+})

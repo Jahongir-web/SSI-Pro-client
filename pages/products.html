@@ -21,32 +21,7 @@
     />
   </head>
   <body>
-    <!-- Modal -->
-    <div
-      id="loadStateModal"
-      class="modal fade"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-hidden="true"
-      aria-labelledby="loadStateModalLabel"
-    >
-      <div
-        class="modal-dialog modal-dialog-centered modal-sm modal-fullscreen-sm-down"
-      >
-        <div class="modal-content">
-          <!-- <div class="modal-header"></div> -->
-          <div
-            class="modal-body d-flex justify-content-center align-items-center"
-          >
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-          </div>
-          <!-- <div class="modal-footer"></div> -->
-        </div>
-      </div>
-    </div>
+    
     <div class="d-flex" id="wrapper">
       <!-- Category -->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -63,11 +38,11 @@
       <!-- Page content wrapper-->
       <div id="page-content-wrapper">
         <!-- навигация -->
-        <nav
-          class="navbar navbar-expand-lg navbar-light bg-light border-bottom container"
-          id="home"
-        >
-          <div class="container-fluid">
+        <div class="nav-box bg-light">
+          <nav
+            class="navbar navbar-expand-lg navbar-light bg-light border-bottom container flex-nowrap align-items-start"
+            id="home"
+          >
             <button 
               class="btn btn-outline-dark canvas-btn"
               type="button"
@@ -75,42 +50,38 @@
             >
               Kатегории
             </button>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="categories"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="../index.html#home">Главная</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="./products.html">Продукты</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html#aboutUs">О нас</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html#ourServices"
-                    >Услуги</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html#contactUs"
-                    >Контакты</a
-                  >
-                </li>
-              </ul>
+            <input style="max-width: 200px;" class="form-control search-input ms-2 me-1" type="search" placeholder="Search...">
+
+            <div class="container-fluid flex-wrap">
+              <button
+                class="navbar-toggler ms-auto"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="categories"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="../index.html#home">Главная</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="./products.html">Продукты</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contactUs"
+                      >Контакты</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
         <!-- Header-->
         <header class="bg-dark py-5">
           <div class="container px-4 px-lg-5 my-5">
@@ -133,11 +104,101 @@
             <div
               class="row gx-4 gx-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center product-list"
             >
-              
+              <div class="d-flex align-items-center justify-content-center" role="status">
+                <img class="ms-4" width="400" src="../assets/img/loading.gif" alt="loading">
+                
+              </div>
             </div>
           </div>
 
           
+        </section>
+
+        <section class="py-5" id="contactUs">
+          <div class="container px-4 px-lg-5 mt-5">
+            <h2 class="fw-bolder mb-4 border-bottom text-white">
+              Наши контакты
+            </h2>
+
+            <div
+              class="row g-4 py-5 row-cols-1 row-cols-lg-3"
+              style="align-items: baseline"
+            >
+              <div class="feature col d-flex-direction-column">
+                <div
+                  class="feature-icon d-inline-flex align-items-center justify-content-center bg-dark bg-gradient text-white fs-2 mb-3"
+                >
+                  <i
+                    class="fa fa-map-marker fa-lg fa-fw"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h2>Адрес</h2>
+                <p class="fw-light text-center">
+                  г. Ташкент, Яшнободский район, улица Карасув, дом-35
+                </p>
+              </div>
+              <div
+                class="feature col d-flex-direction-column justify-content-center"
+              >
+                <div
+                  class="feature-icon d-inline-flex align-items-center justify-content-center bg-dark bg-gradient text-white fs-2 mb-3"
+                >
+                  <i class="fa fa-phone fa-lg fa-fw"></i>
+                </div>
+                <h2>Телефон</h2>
+                <p class="fw-light text-center">
+                  (+998) 95 100 35 33 <br />
+                  (+998) 95 150 35 33 <br />
+                  (+998) 95 130 35 33
+                </p>
+              </div>
+              <div class="feature col d-flex-direction-column">
+                <div
+                  class="feature-icon d-inline-flex align-items-center justify-content-center bg-dark bg-gradient text-white fs-2 mb-3"
+                >
+                  <i class="fa fa-envelope fa-lg fa-fw"></i>
+                </div>
+                <h2>Email</h2>
+                <p class="fw-light text-center">ssiprouz@gmail.com</p>
+              </div>
+              
+            </div>
+
+            <h2 class="pb-2 text-center fw-normal text-white">
+              Мы в социальных сетях
+            </h2>
+
+            <div
+              class="row g-4 row-cols-1 row-cols-lg-3 justify-content-center pt-2"
+              style="column-gap: 1rem"
+            >
+              <span class="col fa-stack fa-lg">
+                <a href="https://www.instagram.com/ssi_pro_uz/"
+                  ><i
+                    class="fa fa-instagram fa-stack-2x fa-inverse"
+                    style="color: #e1306c"
+                  ></i
+                ></a>
+              </span>
+              <span class="col fa-stack fa-lg">
+                <a href="https://www.facebook.com/ssiprouz/"
+                  ><i
+                    class="fa fa-facebook-square fa-stack-2x fa-inverse"
+                    style="color: #4267b2"
+                  ></i
+                ></a>
+              </span>
+              <span class="col fa-stack fa-lg">
+                <a href="https://t.me/ssiprouz"
+                  ><i
+                    class="fa fa-telegram fa-stack-2x fa-inverse"
+                    style="color: #0088cc"
+                  ></i
+                ></a>
+              </span>
+            </div>
+          </div>
         </section>
 
         <div class="b-example-divider"></div>
@@ -149,19 +210,8 @@
               <li class="nav-item">
                 <a href="../index.html#home" class="nav-link px-2">Главная</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="./pages/products.html">Продукты</a>
-              </li>
               <li class="nav-item">
-                <a href="../index.html#aboutUs" class="nav-link px-2">О нас</a>
-              </li>
-              <li class="nav-item">
-                <a href="../index.html#ourServices" class="nav-link px-2"
-                  >Услуги</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="../index.html#contactUs" class="nav-link px-2"
+                <a href="#contactUs" class="nav-link px-2"
                   >Контакты</a
                 >
               </li>
@@ -190,6 +240,6 @@
     <!-- Core theme JS-->
     <script src="../js/scripts.js"></script>
     <script src="../js/sidebars.js"></script>
-    <script src="./products.js"></script>
+    <script src="../js/products.js"></script>
   </body>
 </html>
