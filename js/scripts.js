@@ -4,6 +4,7 @@ const loader = document.querySelector("#loadingIndicator");
 let partnersList = document.querySelector('.patners-list');
 let brandsList = document.querySelector('.brands-list');
 let productsList = document.querySelector('.products-list');
+let videoList = document.querySelector('.video-list');
 
 // myModal.show();
 
@@ -158,3 +159,33 @@ let getProducts = async ()=> {
 }
 
 getProducts()
+
+
+let getVideos = async ()=> {
+  try {
+    let res = await fetch(`https://ssi-pro-server-production.up.railway.app/videos/api`, {method: "GET"})
+
+    let videos = await res.json()
+    
+    let lastVideos = videos.reverse().splice(0, 6)
+
+    let content = '';
+
+    lastVideos.forEach(video => {
+      content = content + `
+        <div class="mb-4 video-box p-2">
+          ${video.content}
+
+          <h6>${video.title}</h6>
+        </div>
+      `
+    })
+
+    videoList.innerHTML = content;
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getVideos()
